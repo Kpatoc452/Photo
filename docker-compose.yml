@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  backend:
+    container_name: backend
+    restart: always
+    build: ./backend_nodejs
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+  frontend:
+    container_name: frontend
+    restart: always
+    build: ./build
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
